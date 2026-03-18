@@ -235,6 +235,7 @@ pytz==2025.2
     # via
     #   -r requirements-pinned.txt
     #   croniter
+    #   metrics-service
     #   pandas
 pyyaml==6.0.3
     # via
@@ -295,10 +296,7 @@ sqlparse==0.5.3
     #   django
     #   django-ansible-base
 typing-extensions==4.15.0
-    # via
-    #   -r requirements-pinned.txt
-    #   psycopg
-    #   referencing
+    # via -r requirements-pinned.txt
 tzdata==2025.2
     # via
     #   -r requirements-pinned.txt
