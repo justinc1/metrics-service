@@ -10,6 +10,7 @@ from django.db.models.functions import Coalesce, Trunc
 from django_generate_series.models import generate_series
 from rest_framework import filters, status
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
@@ -93,7 +94,7 @@ class DashboardReportViewSet(ReadOnlyModelViewSet):
     """
 
     versioning_class = None  # Disable versioning for this viewset
-    permission_classes = [DeveloperModeRequired]
+    permission_classes = [IsAuthenticated]  # correct permissions will be enforced later
     serializer_class = ReportSerializer
 
     filter_backends = [CustomReportFilter, filters.OrderingFilter]
